@@ -17,7 +17,8 @@ config = {
     'download_url': 'https://github.com/Aaronontheweb/scaffold-py/archive/v0.1.5.tar.gz',
     'author_email': 'aaron@stannardlabs.com',
     'version': __version__,
-    'install_requires': ['nose'],
+    'tests_require': ['nose'],
+    'install_requires': [],
     'packages': ['scaffold'],
     'scripts': [],
     'name': 'Scaffold',
@@ -29,8 +30,6 @@ config = {
             'base = scaffold.virtualenvwrapper:template',
         ],
     }
-
-
 }
 
 setup(**config)
