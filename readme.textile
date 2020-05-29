@@ -28,21 +28,23 @@ h2. Running Scaffold
 
 Scaffold installs itself as an executable Python script, so just enter the @pyscaffold@ command on your favorite terminal:
 
-<pre>pyscaffold -p "projectname" [-d {base directory}]</pre>
+<pre>pyscaffold -p "projectname" [-d {root directory}]</pre>
 
 You can also run scaffold as a python module if needed:
 
-<pre>python -m scaffold -p "projectname" [-d {base directory}]</pre>
+<pre>python -m scaffold -p "projectname" [-d {root directory}]</pre>
 
-The @-p@ parameter is the name of your project and is a required field. If you don't specify a base directory with the @-d@ parameter, scaffold will assume that you want to create your project skeleton in your current working directory.
+The @-p@ parameter is the name of your project and is a required field. If you don't specify a root directory with the @-d@ parameter, scaffold will assume that you want to create your project skeleton in your current working directory.
+
+_Note: The `-d` parameter changed in version 0.2.0. Scaffold files are now added directly to the root directory, rather than in a subdirectory._
 
 h3. Sample Usage:
 
 Just to give you an idea of what works and what doesn't...
 
-<pre>pyscaffold -p "http-utils" -d /c/repositories/
+<pre>pyscaffold -p "http-utils" -d /c/repositories/http-utils
 pyscaffold -p "mutliplex-py"
-pyscaffold -p "lazarus" -d ../</pre>
+pyscaffold -p "lazarus" -d ./</pre>
 
 h2. Virtualenvwrapper support
 
@@ -60,3 +62,10 @@ h2. Contribution
 
 I'm not the most experienced Python programmer on the planet, so patches are most certainly welcome :)
 -"Aaron Stannard":http://www.aaronstannard.com/
+
+h2. Changelog
+
+h3. v0.2.0
+
+- changed `-d` parameter to point to the project root, instead of one level above that.
+- Add `-f` option to allow scaffolding in a non-empty directory (e.g. if a README exists)
